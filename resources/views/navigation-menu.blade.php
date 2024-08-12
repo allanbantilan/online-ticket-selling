@@ -5,13 +5,16 @@
        </a>
         <div class="top-menu ml-10">
             <div class="flex space-x-4">
-               
+                
+                @auth
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                     {{ __('Home') }}
                 </x-nav-link>
-                {{-- <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
-                    {{ __('Blog') }}
-                </x-nav-link> --}}
+                
+                <x-nav-link href="{{ route('browse') }}" :active="request()->routeIs('browse')">
+                    {{ __('Browse') }}
+                </x-nav-link>
+                @endauth
 
 
             </div>
